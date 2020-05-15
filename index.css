@@ -1,30 +1,72 @@
-html body {   
+* {
+    margin     : 0;
+    padding    : 0;
+    box-sizing : border-box;
+}
+
+@font-face {  
+    font-family: StarWarsTitle;
+    src: url('./fonts/Starjhol.ttf');      
+}
+
+@font-face {  
+    font-family: StarWarsSub;
+    src: url('./fonts/Starjedi.ttf');      
+}
+
+body {   
     height                  : 100vh;
-    /*width                   : 100%;
-    margin                  : unset;
+    /*margin                  : unset;
     padding                 : unset;*/
     font-family             : Arial, Helvetica, sans-serif;
+    background              : #000;
+    /*
     background              : rgb(64,121,140);
     background              : -moz-linear-gradient(0deg, rgba(64,121,140,1) 0%, rgba(171,252,255,1) 100%);
     background              : -webkit-linear-gradient(0deg, rgba(64,121,140,1) 0%, rgba(171,252,255,1) 100%);
     background              : linear-gradient(0deg, rgba(64,121,140,1) 0%, rgba(171,252,255,1) 100%);
-    filter                  : progid:DXImageTransform.Microsoft.gradient(startColorstr="#40798c",endColorstr="#abfcff",GradientType=1);
+    filter                  : progid:DXImageTransform.Microsoft.gradient(startColorstr="#40798c",endColorstr="#abfcff",GradientType=1);*/
     background-repeat       : no-repeat;
-    background-attachment   : fixed;
+    background-attachment   : fixed;  
+    font-size               : 18px;       
+}
+
+
+
+header {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu {
-    background-color: whitesmoke;
+    background-color: #252525;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 99;
 }
 
 a {
     text-decoration: none; 
-    color: #13525d;   
+    color: white;   
+    font-family: StarWarsSub;
+    font-size: 14px;
 }
 
 a:hover {    
-    cursor          : pointer;
-    text-decoration : underline;    
+    cursor          : pointer;    
+    font-family: StarWarsSub;     
+    color: white;       
+    animation: letters-glow 1.5s linear infinite;
+}
+
+
+
+.menu a {
+    display: block;
+    padding: 10px 20px;    
 }
 
 .menu ul {
@@ -38,10 +80,232 @@ a:hover {
 
 .site-subtitle,
 .site-title {
-    text-align: center;
-    color: #13525d;
+    text-align: center;    
+}
+
+.site-title {
+    font-size: 2em;
+    font-family: StarWarsTitle;
+    color: yellow
 }
 
 .site-subtitle {
     font-style: italic;
+    font-size: 1em;
+    font-family: StarWarsSub;
+    color: whitesmoke;
+}
+
+.img-portfolio {
+    width: 240px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.title-portifolio {
+    font-family: StarWarsSub;
+    color: whitesmoke;
+    animation: letters-glow 1.5s linear infinite;
+    margin-bottom: 1em;
+}
+
+figcaption {
+    color: whitesmoke;
+}
+
+.projetos {
+    padding: 2em;
+    text-align: center;    
+}
+
+.grid-portifolio {
+    display: grid;
+    gap: 1em;    
+}
+
+.grid-portifolio figure {
+    text-align: center;       
+}
+
+.contato {
+    text-align: center;
+}
+
+.contato a {
+    font-size: 2em;    
+}
+
+.contato .fa-github:hover {
+    text-decoration: none;
+    animation: letters-glow-dark-side 1.5s linear infinite;        
+}
+
+.contato .fa-twitter:hover {
+    text-decoration: none;
+    animation: letters-glow-anakin-side 1.5s linear infinite;        
+}
+
+.contato .fa-envelope-square:hover {
+    text-decoration: none;
+    animation: letters-glow-yoda-side 1.5s linear infinite;        
+}
+
+
+  .star-wars {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 800px;
+    color: #feda4a;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 500%;
+    font-weight: 600;
+    letter-spacing: 6px;
+    line-height: 150%;
+    perspective: 400px;
+    text-align: justify;
+  }
+  
+  .sub-titulo-star-wars {
+    position: relative;
+    top: 9999px;
+    transform-origin: 50% 100%;
+    animation: sub-titulo-star-wars 40s linear;    
+  }
+  
+  .sub-titulo-star-wars > .titulo-texto-star-wars {
+    font-size: 90%;
+    text-align: center;
+  }
+  
+  .sub-titulo-star-wars > .titulo-texto-star-wars h1 {
+    margin: 0 0 100px;
+    text-transform: uppercase;
+  }
+  
+  @keyframes sub-titulo-star-wars {
+    0% {
+      top: 0;
+      transform: rotateX(20deg)  translateZ(0);      
+    }
+    100% { 
+      top: -6000px;
+      transform: rotateX(25deg) translateZ(-2500px);
+    }
+  }
+
+/*se a tela tiver pelo menos 564 pixels carrega esses estilos*/
+@media (min-width : 564px){
+    body {
+        font-size: 20px;
+    }
+    .site-title {
+        font-size: 3em;
+    }
+    .site-subtitle {
+        font-size: 2em;
+    }
+
+    .grid-portifolio {
+        display: grid;
+        gap: 1em;   
+        grid-template-columns: repeat(2,240px); 
+        text-align: center;   
+        justify-content: center;     
+    }
+    
+    .grid-portifolio figure {
+        text-align: center;       
+    }
+
+    @keyframes letters-glow {
+        from {
+          color: white; 
+          text-shadow: 0 0 5px yellow;
+        }
+        50% {
+          color: white; 
+          text-shadow: 0 0 18px yellow;
+        }
+        to {
+          color: white; 
+          text-shadow: 0 0 8px yellow;
+        }
+    }
+}
+
+
+/*se a tela tiver pelo menos 880 pixels carrega esses estilos*/
+@media (min-width : 880px){
+   
+    .grid-portifolio {        
+        grid-template-columns: repeat(3,280px);  
+        align-content: center;        
+        justify-content: center;  
+        height: calc(90vh - 5.5em - 48px);   
+    }
+    
+   
+}
+
+
+
+@keyframes letters-glow {
+    from {
+      color: white; 
+      text-shadow: 0 0 3px yellow;
+    }
+    50% {
+      color: white; 
+      text-shadow: 0 0 7px yellow;
+    }
+    to {
+      color: white; 
+      text-shadow: 0 0 3px yellow;
+    }
+  }
+
+@keyframes letters-glow-dark-side {
+    from {
+        color: white; 
+        text-shadow: 0 0 5px red;
+    }
+    50% {
+        color: white; 
+        text-shadow: 0 0 18px red;
+    }
+    to {
+        color: white; 
+        text-shadow: 0 0 8px red;
+    }
+}
+
+@keyframes letters-glow-anakin-side {
+    from {
+        color: white; 
+        text-shadow: 0 0 5px blue;
+    }
+    50% {
+        color: white; 
+        text-shadow: 0 0 18px blue;
+    }
+    to {
+        color: white; 
+        text-shadow: 0 0 8px blue;
+    }
+}
+
+@keyframes letters-glow-yoda-side {
+    from {
+        color: white; 
+        text-shadow: 0 0 5px green;
+    }
+    50% {
+        color: white; 
+        text-shadow: 0 0 18px green;
+    }
+    to {
+        color: white; 
+        text-shadow: 0 0 8px green;
+    }
 }

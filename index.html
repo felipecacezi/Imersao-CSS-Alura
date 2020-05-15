@@ -4,28 +4,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Felipe Cacezi</title>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="http://allfont.net/allfont.css?fonts=star-jedi" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./sabre_luz.css">
+
+    <script src="https://kit.fontawesome.com/dacbc58df6.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
-
+	
     <header>
-        
-        <nav class="menu">
+      
+
+        <nav class="menu" style="display:none;">
             <ul>
                 <li><a href="#">Sobre</a></li>
-                <li><a href="#">Portfólio</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="#proj">Portfólio</a></li>
+                <li><a href="#cont">Contato</a></li>
             </ul>
         </nav>
 
-        <h1 class="site-title">Felipe Cacezi</h1>
+        <div class="pricipal" style="display:none;">
 
-        <h2 class="site-subtitle">Web Developer</h2>
+          <div class="saber1">
+            <div class="saber-yoda"></div>
+          </div>
 
+          <div>
+              <h1 class="site-title">Felipe Cacezi</h1>
+              <h2 class="site-subtitle">Web Developer</h2>
+          </div>
+
+          <div class="saber2">
+            <div class="saber-sith"></div>
+          </div>
+
+        </div>
+
+        <section class="star-wars">
+
+          <div class="sub-titulo-star-wars">
+            
+            <div class="titulo-texto-star-wars">
+              <p>Episode I</p>
+              <h1>The Web Developer</h1>
+            </div>
+            
+            <p>A long and long time ago in a distant galaxy there was a developer named Felipe Caceziwalker who did not know how to deal with css very well</p>     
+            <p>but there was a very crazy pandemic that made everyone stay at home on alert and in the middle of this pandemic he started to break through the world of programming and learn new syntax and here comes the podcast of the hipsters where he met alura, and just when he thought that everything was lost,</p>
+            <p>alura creates immersionCSS that he without thinking twice signed up to learn at once for all learn CSS</p>
+        
+          </div>
+        
+        </section>     
+        
     </header>
 
     
+
+    <section id="proj" class="projetos">
+
+      <h2 class="title-portifolio">Projetos</h2>
+
+        <div class="grid-portifolio">
+
+          <figure>
+            <img class="img-portfolio" src="./img/ecommerce-creditos-s-o-c-i-a-l-c-u-t-unsplash.jpg" alt="eCommerce">
+            <figcaption>eCommerce</figcaption>
+          </figure>
+
+          <figure>
+            <img class="img-portfolio" src="./img/mobile-creditos-nate-grant-unsplash.jpg" alt=">Mobile">
+            <figcaption>Mobile</figcaption>
+          </figure>
+
+          <figure>
+            <img class="img-portfolio" src="./img/webdesign-creditos-domenico-loia-unsplash.jpg" alt="Web design">
+            <figcaption>Web design</figcaption>
+          </figure>
+
+          <figure>
+            <img class="img-portfolio" src="./img/projpessoais-creditos-hal-gatewood-unsplash.jpg" alt="Projetos pessoais">
+            <figcaption>Projetos pessoais</figcaption>
+          </figure>
+
+        </div>
+
+      </section>
+
+      <section id="cont" class="contato">
+
+        <!--h2 class="title-portifolio">Contato</h2-->
+
+        <div class="grid icons">
+
+          <a target="_blank" href="https://https://github.com/felipecacezi">
+            <i class="fab fa-github"></i>
+          </a>
+
+          <a target="_blank" href="https://https://twitter.com/felipecacezi">
+            <i class="fab fa-twitter"></i>
+          </a>
+
+          <a target="_blank" href="https://www.linkedin.com/in/felipe-cacezi-35b2a693/">
+            <i class="fab fa-linkedin"></i>
+          </a>
+
+          <a href="mailto:felipecacezi@gmail.com">
+            <i class="fas fa-envelope-square"></i>
+          </a>
+
+        </div>
+
+      </section>
+
+
+      <!--audio src="./mp3/starwars.mp3" preload="auto" autoplay loop></audio-->
+
+<script>
+
+  setTimeout(() => {
+
+      jQuery('.star-wars').fadeOut('slow');      
+
+  }, 39000);
+
+  setTimeout(() => {
+    jQuery('.pricipal').fadeIn('slow');
+    jQuery('.menu').fadeIn('slow');
+    jQuery('body').css('height','100vh')
+    jQuery('body').css('overflow','')
+  }, 41000);
+
+  jQuery('body').css('height','100%')
+  jQuery('body').css('overflow','hidden')
+
+</script>
+
+
 </body>
 </html>
 
